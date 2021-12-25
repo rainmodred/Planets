@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  font-family: 'Spartan', 'sans-serif';
+}
+
+body {
+  background-color: rgb(7, 7, 36);
+  background-image: url('../public/images/background-stars.svg');
+  background-repeat: no-repeat;
+
+  color: white;
+}
