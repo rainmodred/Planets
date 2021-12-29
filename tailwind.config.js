@@ -7,6 +7,7 @@ module.exports = {
     {
       pattern:
         /^(bg|border)-(mercury|venus|earth|mars|jupiter|saturn|uranus|neptune)$/,
+      variants: ['md', 'after'],
     },
   ],
   theme: {
@@ -36,6 +37,10 @@ module.exports = {
         saturn: 'hsl(40, 96%, 70%)',
         uranus: 'hsl(168, 82%, 67%)',
         neptune: 'hsl(222, 95%, 63%)',
+      },
+      gridTemplateRows: {
+        custom: 'min-content 1fr 1fr min-content',
+        customMd: 'min-content 1fr min-content min-content',
       },
     },
   },
