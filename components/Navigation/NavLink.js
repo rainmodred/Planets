@@ -9,14 +9,14 @@ export default function NavLink({ onClose, title, path, isActive }) {
 
   return (
     <li
-      className={`group relative items-center flex gap-4 py-4 transition-all ease-linear duration-200 border-b md:text-navLink ${
+      className={`group relative items-center flex gap-4 py-4 lg:py-6 transition-all ease-linear duration-200 border-b md:text-navLink ${
         isActive ? 'text-white' : 'text-white-700'
       } hover:text-white border-white-100 sm:border-b-transparent`}
       key={`route-${path}`}
       onClick={onClose}
     >
       <span
-        className={`group-hover:md:scale-100 duration-200 md:absolute lg:top-0 h-1 md:bottom-0 w-full ${color} ${isVisible}  transition-all ease-linear md:block hidden`}
+        className={`group-hover:md:scale-100 duration-200 md:absolute lg:top-0 h-1 md:bottom-0 w-full ${color} ${isVisible} transition-all ease-linear md:block hidden`}
       ></span>
       <span
         className={`md:hidden block w-6 h-6 rounded-full bg-${title}`}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { routes } from '../../utils/routes';
 import hamburger from '../../public/images/icon-hamburger.svg';
@@ -19,13 +19,21 @@ export default function MobileNavigation() {
     setIsOpen(false);
   }
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style = 'overflow-y:hidden';
+    } else {
+      document.body.style = '';
+    }
+  }, [isOpen]);
+
   return (
     <>
       <button className="md:hidden" onClick={toggleMenu}>
         <Image src={hamburger} alt="menu"></Image>
       </button>
       <nav
-        className={`fixed top-[90px] left-0 px-6 bg-blackMain w-full h-full overflow-y-auto md:hidden transition-transform ease-linear duration-200 ${
+        className={`z-10 fixed top-[90px] left-0 px-6 bg-blackMain w-full h-full overflow-y-auto md:hidden transition-transform ease-linear duration-200 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

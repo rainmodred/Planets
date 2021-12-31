@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
+
 import { routes } from '../../utils/routes';
 import NavLink from './NavLink';
 
 export default function Navigation() {
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
   return (
     <nav className="items-center hidden h-full md:flex">
@@ -13,7 +14,7 @@ export default function Navigation() {
             <NavLink
               title={title}
               path={path}
-              isActive={pathname === path}
+              isActive={asPath === path}
               key={`link-${path}`}
             />
           );
